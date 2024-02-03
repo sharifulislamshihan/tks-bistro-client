@@ -30,7 +30,7 @@ const Navbar = () => {
     </>
 
     return (
-        <div className=" navbar h-56 bg-cover bg-no-repeat bg-center w-full" style={{
+        <nav className=" navbar h-56 bg-cover bg-no-repeat bg-center w-full" style={{
             backgroundImage: `url(https://i.ibb.co/HXj3k2M/black-cracked-textured-wall-background.jpg)`
         }}>
             {/* Overlay */}
@@ -76,7 +76,7 @@ const Navbar = () => {
                 </div> */}
 
             </div>
-        </div>
+        </nav>
     );
 };
 
