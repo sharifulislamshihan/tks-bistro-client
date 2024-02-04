@@ -16,7 +16,7 @@ const Footer = () => {
                         {/* name and the email input field */}
                         <div className="text-center mt-32">
                             <h3 className="self-center text-6xl mb-1 font-heading font-bold whitespace-nowrap text-[#f2ece0]">Newsletter</h3>
-                            <h2 className="self-center text-base mb-7 font-body font-normal text-[#f2ece0]">Subscribe to our mailing list</h2>
+                            <h2 className="self-center text-base mb-7 font-paragraph font-normal text-[#f2ece0]">Subscribe to our mailing list</h2>
 
 
 
@@ -37,7 +37,7 @@ const Footer = () => {
                             <div className="grid grid-cols-1 my-32 mx-auto lg:mx-60 md:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-6">
                                 <div>
                                     <h2 className="mb-10 text-lg font-semibold font-heading text-white uppercase dark:text-white">MENU</h2>
-                                    <div className="text-slate-400 font-body text-base text-center dark:text-white font-medium">
+                                    <div className="text-slate-400 font-paragraph text-base text-center dark:text-white font-medium">
                                         <Link>
                                             <h3 className=" my-3 hover:text-yellow-200 ">Private Chef</h3>
                                         </Link>
@@ -56,7 +56,7 @@ const Footer = () => {
 
                                 <div>
                                     <h2 className="mb-10 text-lg font-semibold font-heading text-white uppercase dark:text-white">CATERING</h2>
-                                    <div className="text-slate-400 font-body text-base text-center dark:text-white font-medium">
+                                    <div className="text-slate-400 font-paragraph text-base text-center dark:text-white font-medium">
                                         <Link>
                                             <h3 className=" my-3 hover:text-yellow-200 ">Corporate Events</h3>
                                         </Link>
@@ -75,7 +75,7 @@ const Footer = () => {
 
                                 <div>
                                     <h2 className="mb-10 text-lg font-semibold font-heading text-white uppercase dark:text-white">CONTACTS</h2>
-                                    <div className="text-slate-400 font-body text-base text-center dark:text-white font-medium">
+                                    <div className="text-slate-400 font-paragraph text-base text-center dark:text-white font-medium">
                                         <Link>
                                             <h3 className=" my-3 hover:text-yellow-200 ">1122 Potter Rd, Antelope</h3>
                                         </Link>
@@ -92,7 +92,7 @@ const Footer = () => {
 
                                 <div>
                                     <h2 className="mb-10 text-lg font-semibold font-heading text-white uppercase dark:text-white">SOCIAL</h2>
-                                    <div className="text-slate-400 font-body text-base text-center dark:text-white font-medium">
+                                    <div className="text-slate-400 font-paragraph text-base text-center dark:text-white font-medium">
                                         <Link>
                                             <h3 className=" my-3 hover:text-yellow-200 ">Facebook</h3>
                                         </Link>

@@ -46,7 +46,8 @@ const Header = () => {
                 backgroundImage: `url(https://i.ibb.co/HXj3k2M/black-cracked-textured-wall-background.jpg)`
             }}>
 
-                <div className="max-w-screen-xl flex flex-col items-center justify-between mx-auto p-4">
+                <div className="max-w-screen-xl flex flex-col items-center justify-between lg:hidden mx-auto p-4">
+
 
                     {/* logo we will only use it in tab and mobile */}
                     <a href="" className="flex items-center justify-center space-x-3 rtl:space-x-reverse">
@@ -54,10 +55,10 @@ const Header = () => {
                     </a>
                 </div>
 
-                <div className="flex flex-col justify-center lg:hidden">
+                <div className="flex justify-center flex-col items-center md:order-2 space-x-1 md:space-x-0 rtl:space-x-reverse">
 
                     {/* get Started button for md and small device */}
-                    <div className="text-center my-3">
+                    <div className="text-center lg:hidden my-3">
                         <button type="button" className="btn text-black bg-[#f4d699] font-heading font-bold rounded-lg text-sm px-4 py-2 text-center">Get started</button>
                     </div>
 
@@ -77,42 +78,37 @@ const Header = () => {
                 {/* menu bar in large device */}
 
                 <div className="items-center justify-center xl:gap-36 hidden w-full lg:flex flex-row lg:w-auto lg:order-1" id="navbar-cta">
-
-                    <div>
                         <ul className="flex flex-row items-center xl:pl-40  font-medium p-4 space-x-3 xl:space-x-10">
                             <NavLink to='/' activeclassName="active">
-                                <li className=" text-sm xl:text-lg text-white text-opacity-50 hover:text-opacity-100 font-normal font-heading"><a>HOME</a></li>
+                                <li className=" text-base xl:text-xl text-white text-opacity-50 hover:text-opacity-100 font-normal font-heading"><a>HOME</a></li>
                             </NavLink>
                             <NavLink to='' activeclassName="active">
-                                <li className=" text-sm xl:text-lg text-white text-opacity-50 hover:text-opacity-100 font-normal font-heading"><a>MENU</a></li>
+                                <li className=" text-base xl:text-xl text-white text-opacity-50 hover:text-opacity-100 font-normal font-heading"><a>MENU</a></li>
                             </NavLink>
                             <NavLink to='' activeclassName="active">
-                                <li className=" text-sm xl:text-lg text-white text-opacity-50 hover:text-opacity-100 font-normal font-heading"><a>SERVICES</a></li>
+                                <li className=" text-base xl:text-xl text-white text-opacity-50 hover:text-opacity-100 font-normal font-heading"><a>SERVICES</a></li>
                             </NavLink>
                             <NavLink to='/'>
                                 <img src="https://i.ibb.co/LSJtGrZ/Logo.png" className="w-72 mx-5 hidden lg:block" alt="Tks Bistro" />
                             </NavLink>
                             <NavLink to='' activeclassName="active">
-                                <li className=" text-sm xl:text-lg text-white text-opacity-50 hover:text-opacity-100 font-normal font-heading"><a>PRIVATE CHEF</a></li>
+                                <li className=" text-base xl:text-xl text-white text-opacity-50 hover:text-opacity-100 font-normal font-heading"><a>PRIVATE CHEF</a></li>
                             </NavLink>
                             <NavLink to='' activeclassName="active">
-                                <li className=" text-sm xl:text-lg text-white text-opacity-50 hover:text-opacity-100 font-normal font-heading"><a>FEATURES</a></li>
+                                <li className=" text-base xl:text-xl text-white text-opacity-50 hover:text-opacity-100 font-normal font-heading"><a>LOG IN</a></li>
                             </NavLink>
 
                             <NavLink to='' activeclassName="active">
-                                <li className=" text-sm xl:text-lg text-white text-opacity-50 hover:text-opacity-100 font-normal font-heading "><a>CONTACT US</a></li>
+                                <li className=" text-base xl:text-xl text-white text-opacity-50 hover:text-opacity-100 font-normal font-heading "><a>CONTACT US</a></li>
                             </NavLink>
                         </ul>
-                    </div>
 
-
-                    <div className="flex justify-end">
-                        {/* get started button in lg device */}
-                        <div className="hidden lg:flex mx-20">
-                            <button type="button" className="btn lg:btn-md text-black bg-[#f4d699] font-heading  font-bold rounded-lg text-sm px-4 py-2 text-center">Get started</button>
-                        </div>
-                    </div>
+                    {/* get started button in lg device */}
+                    {/* <div className="hidden lg:flex mx-20">
+                        <button type="button" className="btn lg:btn-md text-black bg-[#f4d699] font-heading  font-bold rounded-lg text-sm px-4 py-2 text-center">Get started</button>
+                    </div> */}
                 </div>
+
 
             </nav>
 
