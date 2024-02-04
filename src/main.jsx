@@ -8,6 +8,10 @@ import { RouterProvider } from 'react-router-dom'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <div className=" relative bg-cover bg-center min-h-screen" style={{
+                backgroundImage: `url(https://i.ibb.co/HXj3k2M/black-cracked-textured-wall-background.jpg)`
+            }}>
+      <RouterProvider router={router} />
+    </div>
   </React.StrictMode>,
 )

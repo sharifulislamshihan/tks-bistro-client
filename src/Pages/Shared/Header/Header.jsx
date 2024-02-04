@@ -21,11 +21,11 @@ const Header = () => {
             <li className=" text-base xl:text-lg text-black text-opacity-50 hover:text-opacity-100 font-normal font-heading py-2 px-3 md:p-0 "><a>PRIVATE CHEF</a></li>
         </NavLink>
         <NavLink to='' activeclassName="active">
-            <li className=" text-base xl:text-lg text-black text-opacity-50 hover:text-opacity-100 font-normal font-heading py-2 px-3 md:p-0 "><a>FEATURES</a></li>
+            <li className=" text-base xl:text-lg text-black text-opacity-50 hover:text-opacity-100 font-normal font-heading py-2 px-3 md:p-0 "><a>CONTACT US</a></li>
         </NavLink>
 
         <NavLink to='' activeclassName="active">
-            <li className=" text-base xl:text-lg text-black text-opacity-50 hover:text-opacity-100 font-normal font-heading py-2 px-3 md:p-0 "><a>CONTACT US</a></li>
+            <li className=" text-base xl:text-lg text-black text-opacity-50 hover:text-opacity-100 font-normal font-heading py-2 px-3 md:p-0 "><a>LOGIN</a></li>
         </NavLink>
     </>
 
@@ -42,7 +42,7 @@ const Header = () => {
         }}>
             {/* Overlay */}
             {/* <div className="absolute inset-0 bg-yellow-700 bg-opacity-5 z-10"></div> */}
-            <nav className="h-72 md:h-80 bg-cover bg-no-repeat bg-center w-full" style={{
+            <nav className="h-72 md:h-68 bg-cover bg-no-repeat bg-center w-full" style={{
                 backgroundImage: `url(https://i.ibb.co/HXj3k2M/black-cracked-textured-wall-background.jpg)`
             }}>
 
@@ -67,7 +67,7 @@ const Header = () => {
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </div>
-                        <ul tabIndex={0} className="menu dropdown-content mt-3 z-[1] p-2 shadow bg-[#f4d699] text-black rounded-box w-52">
+                        <ul tabIndex={0} className="menu dropdown-content mt-3 z-[10] mx-auto shadow bg-[#f4d699] text-black rounded-box w-44 md:w-52">
                             {NavLinks}
                         </ul>
                     </div>
@@ -77,7 +77,7 @@ const Header = () => {
 
                 {/* menu bar in large device */}
 
-                <div className="items-center justify-center xl:gap-36 hidden w-full lg:flex flex-row lg:w-auto lg:order-1" id="navbar-cta">
+                <div className="items-center justify-center xl:gap-36 xl:pr-24 hidden w-full lg:flex flex-row lg:w-auto lg:order-1" id="navbar-cta">
                         <ul className="flex flex-row items-center xl:pl-40  font-medium p-4 space-x-3 xl:space-x-10">
                             <NavLink to='/' activeclassName="active">
                                 <li className=" text-base xl:text-xl text-white text-opacity-50 hover:text-opacity-100 font-normal font-heading"><a>HOME</a></li>
