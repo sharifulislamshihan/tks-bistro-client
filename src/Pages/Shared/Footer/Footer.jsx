@@ -9,7 +9,7 @@ const Footer = () => {
             <footer className=" relative bg-cover bg-center min-h-screen" style={{
                 backgroundImage: `url(https://i.ibb.co/HXj3k2M/black-cracked-textured-wall-background.jpg)`
             }} >
-                <div className="absolute inset-0 bg-yellow-700 bg-opacity-5"></div>
+                {/* <div className="absolute inset-0 bg-yellow-700 bg-opacity-5"></div> */}
                 <div className="mx-auto w-full p-4 py-6 lg:py-8">
                     <div className="justify-between">
 
