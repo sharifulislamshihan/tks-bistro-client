@@ -3,7 +3,7 @@ const Card = () => {
 
 
     return (
-        <div className="grid grid-cols-1 lg:grid-cols-3">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 mt-2 mb-2 ">
 
             {/* 1 */}
             <div className="relative transition-transform duration-300 transform hover:scale-110">
