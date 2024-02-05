@@ -1,0 +1,7 @@
+.hovered img:first-child {
+    opacity: 0;
+}
+
+.hovered img:last-child {
+    opacity: 1;
+}

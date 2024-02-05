@@ -6,16 +6,13 @@ const Footer = () => {
 
             {/* https://i.ibb.co/k6pXpQw/black-marble-texture-footer-background.jpg */}
 
-            <footer className=" relative bg-cover bg-center min-h-screen" style={{
-                backgroundImage: `url(https://i.ibb.co/HXj3k2M/black-cracked-textured-wall-background.jpg)`
-            }} >
-                {/* <div className="absolute inset-0 bg-yellow-700 bg-opacity-5"></div> */}
+            <footer className=" ">
                 <div className="mx-auto w-full p-4 py-6 lg:py-8">
                     <div className="justify-between">
 
                         {/* name and the email input field */}
                         <div className="text-center mt-32">
-                            <h3 className="self-center text-6xl mb-1 font-heading font-bold whitespace-nowrap text-[#f2ece0]">Newsletter</h3>
+                            <h3 className="self-center text-5xl lg:text-6xl mb-1 font-heading font-bold whitespace-nowrap text-[#f2ece0]">Newsletter</h3>
                             <h2 className="self-center text-base mb-7 font-paragraph font-normal text-[#f2ece0]">Subscribe to our mailing list</h2>
 
 

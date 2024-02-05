@@ -37,14 +37,8 @@ const Header = () => {
     //     </nav >
 
     return (
-        <div className="relative bg-cover bg-no-repeat bg-center w-full" style={{
-            backgroundImage: `url(https://i.ibb.co/HXj3k2M/black-cracked-textured-wall-background.jpg)`
-        }}>
-            {/* Overlay */}
-            {/* <div className="absolute inset-0 bg-yellow-700 bg-opacity-5 z-10"></div> */}
-            <nav className="h-72 md:h-68 bg-cover bg-no-repeat bg-center w-full" style={{
-                backgroundImage: `url(https://i.ibb.co/HXj3k2M/black-cracked-textured-wall-background.jpg)`
-            }}>
+            
+            <nav className="h-72 md:h-68 " >
 
                 <div className="max-w-screen-xl flex flex-col items-center justify-between lg:hidden mx-auto p-4">
 
@@ -112,8 +106,6 @@ const Header = () => {
 
             </nav>
 
-
-        </div >
     );
 };
 
