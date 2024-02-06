@@ -3,6 +3,7 @@ import Card from "../Card/Card";
 import Consulting from "../Consulting/Consulting";
 import EventPackage from "../EventPackage/EventPackage";
 import Menu from "../Menu/Menu";
+import Reviews from "../Reviews/Reviews";
 import SublimeSection from "../SublimeSection/SublimeSection";
 
 
@@ -16,6 +17,7 @@ const Home = () => {
                 <Consulting></Consulting>
                 <EventPackage></EventPackage>
                 <Menu></Menu>
+                <Reviews></Reviews>
             </div>
         </div>
     );
