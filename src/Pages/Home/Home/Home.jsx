@@ -1,6 +1,8 @@
 import Banner from "../Banner/Banner";
 import Card from "../Card/Card";
 import Consulting from "../Consulting/Consulting";
+import EventPackage from "../EventPackage/EventPackage";
+import Menu from "../Menu/Menu";
 import SublimeSection from "../SublimeSection/SublimeSection";
 
 
@@ -12,6 +14,8 @@ const Home = () => {
                 <Card></Card>
                 <SublimeSection></SublimeSection>
                 <Consulting></Consulting>
+                <EventPackage></EventPackage>
+                <Menu></Menu>
             </div>
         </div>
     );
