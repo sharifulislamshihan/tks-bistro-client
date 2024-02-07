@@ -14,7 +14,7 @@ const EventPackageCard = () => {
                 <div className="card-body items-center text-center">
                     <h2 className="card-title text-lg lg:text-xl xl:text-2xl font-body font-bold my-5 text-[#41444B] hover:text-[#B49EBF] transition-transform hover:translate-y-1">Corporate Events</h2>
                     <div className="card-actions flex justify-center">
-                        <button className="btn bg-[#B49EBF] px-7 rounded-full hover:bg-[#B49EBF] text-white font-semibold text-body ">More Info</button>
+                        <button className="btn bg-[#B49EBF] px-7 rounded-full hover:bg-[#B49EBF] text-white font-semibold font-paragraph ">More Info</button>
                     </div>
                 </div>
             </div>
@@ -27,7 +27,7 @@ const EventPackageCard = () => {
                 <div className="card-body items-center text-center">
                     <h2 className="card-title text-lg lg:text-xl xl:text-2xl font-body font-bold my-5 text-[#41444B] hover:text-[#B49EBF] transition-transform hover:translate-y-1">Weddings <br />And Galas</h2>
                     <div className="card-actions flex justify-center">
-                        <button className="btn bg-[#B49EBF] px-7 rounded-full hover:bg-[#B49EBF] text-white font-semibold text-body ">More Info</button>
+                        <button className="btn bg-[#B49EBF] px-7 rounded-full hover:bg-[#B49EBF] text-white font-semibold font-paragraph ">More Info</button>
                     </div>
                 </div>
             </div>
@@ -41,7 +41,7 @@ const EventPackageCard = () => {
                 <div className="card-body items-center text-center">
                     <h2 className="card-title text-lg lg:text-xl xl:text-2xl font-body font-bold my-5 text-[#41444B] hover:text-[#B49EBF] transition-transform hover:translate-y-1">Special Events</h2>
                     <div className="card-actions flex justify-center">
-                        <button className="btn bg-[#B49EBF] px-7 rounded-full hover:bg-[#B49EBF] text-white font-semibold text-body ">More Info</button>
+                        <button className="btn bg-[#B49EBF] px-7 rounded-full hover:bg-[#B49EBF] text-white font-semibold font-paragraph ">More Info</button>
                     </div>
                 </div>
             </div>
@@ -55,7 +55,7 @@ const EventPackageCard = () => {
                 <div className="card-body items-center text-center">
                     <h2 className="card-title text-lg lg:text-xl xl:text-2xl font-body font-bold my-5 text-[#41444B] hover:text-[#B49EBF] transition-transform hover:translate-y-1">Cooking Classes</h2>
                     <div className="card-actions flex justify-center">
-                        <button className="btn bg-[#B49EBF] px-7 rounded-full hover:bg-[#B49EBF] text-white font-semibold text-body ">More Info</button>
+                        <button className="btn bg-[#B49EBF] px-7 rounded-full hover:bg-[#B49EBF] text-white font-semibold font-paragraph ">More Info</button>
                     </div>
                 </div>
             </div>
