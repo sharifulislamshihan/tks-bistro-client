@@ -76,23 +76,23 @@ const Header = () => {
                             <NavLink to='/' activeclassName="active">
                                 <li className=" text-base xl:text-xl text-white text-opacity-50 hover:text-opacity-100 font-normal font-heading"><a>HOME</a></li>
                             </NavLink>
-                            <NavLink to='' activeclassName="active">
+                            <NavLink to='/menu' activeclassName="active">
                                 <li className=" text-base xl:text-xl text-white text-opacity-50 hover:text-opacity-100 font-normal font-heading"><a>MENU</a></li>
                             </NavLink>
-                            <NavLink to='' activeclassName="active">
+                            <NavLink to='/services' activeclassName="active">
                                 <li className=" text-base xl:text-xl text-white text-opacity-50 hover:text-opacity-100 font-normal font-heading"><a>SERVICES</a></li>
                             </NavLink>
                             <NavLink to='/'>
                                 <img src="https://i.ibb.co/LSJtGrZ/Logo.png" className="w-72 mx-5 hidden lg:block" alt="Tks Bistro" />
                             </NavLink>
-                            <NavLink to='' activeclassName="active">
+                            <NavLink to='/privateChef' activeclassName="active">
                                 <li className=" text-base xl:text-xl text-white text-opacity-50 hover:text-opacity-100 font-normal font-heading"><a>PRIVATE CHEF</a></li>
                             </NavLink>
-                            <NavLink to='' activeclassName="active">
+                            <NavLink to='/login' activeclassName="active">
                                 <li className=" text-base xl:text-xl text-white text-opacity-50 hover:text-opacity-100 font-normal font-heading"><a>LOG IN</a></li>
                             </NavLink>
 
-                            <NavLink to='' activeclassName="active">
+                            <NavLink to='/contactUs' activeclassName="active">
                                 <li className=" text-base xl:text-xl text-white text-opacity-50 hover:text-opacity-100 font-normal font-heading "><a>CONTACT US</a></li>
                             </NavLink>
                         </ul>
