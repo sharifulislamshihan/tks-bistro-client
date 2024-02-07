@@ -1,10 +1,10 @@
+import ServicesBanner from "../ServicesBanner/ServicesBanner";
 
 
 const Services = () => {
     return (
-        <div>
-            <h3 className='text-white'>This is Services</h3>
-
+        <div className="bg-[#F2ECE0]">
+            <ServicesBanner></ServicesBanner>
         </div>
     );
 };

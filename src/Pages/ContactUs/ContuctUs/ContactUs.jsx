@@ -1,9 +1,10 @@
+import ContactUsBanner from "../ContactUsBanner/ContactUsBanner";
 
 
 const ContactUs = () => {
     return (
-        <div>
-            <h3 className='text-white'>This is contact us</h3>
+        <div className="bg-[#F2ECE0]">
+            <ContactUsBanner></ContactUsBanner>
 
         </div>
     );

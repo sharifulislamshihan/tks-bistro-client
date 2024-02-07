@@ -1,9 +1,10 @@
+import PrivateChefBanner from "../PrivateChefBanner/PrivateChefBanner";
 
 
 const PrivateChef = () => {
     return (
-        <div>
-            <h3 className='text-white'>This is PRIVATE CHEF</h3>
+        <div className="bg-[#F2ECE0]">
+            <PrivateChefBanner></PrivateChefBanner>
 
         </div>
     );
