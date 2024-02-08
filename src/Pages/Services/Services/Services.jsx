@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import ServicesBanner from "../ServicesBanner/ServicesBanner";
 
 const cardItems = [
@@ -71,6 +72,12 @@ const cardItems = [
 const Services = () => {
     return (
         <div className="bg-[#F2ECE0]">
+
+            {/* helmet */}
+            <Helmet>
+                <title>Services: TKS Bistro</title>
+            </Helmet>
+
             {/* service Banner */}
             <ServicesBanner></ServicesBanner>
 

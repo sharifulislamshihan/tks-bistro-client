@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import Banner from "../Banner/Banner";
 import Card from "../Card/Card";
 import Consulting from "../Consulting/Consulting";
@@ -10,6 +11,12 @@ import SublimeSection from "../SublimeSection/SublimeSection";
 const Home = () => {
     return (
         <div className="bg-[#F2ECE0]">
+            {/* helmet */}
+            <Helmet>
+                <title>TKS Bistro</title>
+            </Helmet>
+
+
             <Banner></Banner>
             <div className="mx-2">
                 <Card></Card>

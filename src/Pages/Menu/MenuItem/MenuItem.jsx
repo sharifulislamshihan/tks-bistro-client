@@ -3,8 +3,8 @@
 const MenuItem = ({ item }) => {
     const { name, image, recipe, price } = item;
     return (
-        <div className="flex justify-center mx-20 my-5">
-            <div className="avatar flex justify-start">
+        <div className="flex flex-col xl:flex-row xl:justify-center mx-3 xl:mx-20 my-5">
+            <div className="avatar flex justify-start my-auto">
                 <div className="w-28 rounded">
                     <img src={image} />
                 </div>
