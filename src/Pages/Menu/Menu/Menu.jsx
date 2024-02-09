@@ -94,7 +94,7 @@ const Menu = () => {
 
 
 
-                <div className="grid grid-cols-1 xl:grid-cols-2 mx-5  md:mx-10 lg:mx-40 mt-40">
+                <div className="grid grid-cols-1 lg:grid-cols-2 mx-5  md:mx-10 lg:mx-28 mt-40">
                     {
                         filteredMenu.map(item => <MenuItem
                             key={item._id}
