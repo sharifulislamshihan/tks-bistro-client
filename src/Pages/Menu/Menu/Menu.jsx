@@ -22,17 +22,21 @@ const Menu = () => {
 
     }, [menu])
 
+    const handleFilterClick = (category) =>{
+        setSelectedCategory(category)
+    }
+
 
     // filtering menu button click wise
     const filteredMenu = selectedCategory
         ?
         // if there is any button clicked
-        menu.filter(item => {
-            item.category == selectedCategory
-        })
+        menu.filter((item) => item.category === selectedCategory)
         :
         // else show all the menu
         menu
+    console.log(filteredMenu);
+
 
     return (
         <div className="bg-[#F2ECE0]">
@@ -64,27 +68,27 @@ const Menu = () => {
 
                 <div className="flex flex-wrap gap-4 justify-center mx-20 pt-10">
                     <button
-                        onClick={() => setSelectedCategory('popular')}
+                        onClick={() => handleFilterClick('popular')}
                         className="btn bg-[#B49EBF] px-10 rounded-full hover:bg-[#B49EBF] text-white font-semibold font-paragraph ">POPULAR</button>
 
                     <button
-                        onClick={() => setSelectedCategory('offered')}
+                        onClick={() => handleFilterClick('offered')}
                         className="btn bg-[#B49EBF] px-10 rounded-full hover:bg-[#B49EBF] text-white font-semibold font-paragraph ">OFFERED</button>
 
                     <button
-                        onClick={() => setSelectedCategory('pizza')}
+                        onClick={() => handleFilterClick('pizza')}
                         className="btn bg-[#B49EBF] px-10 rounded-full hover:bg-[#B49EBF] text-white font-semibold font-paragraph ">PIZZA</button>
 
                     <button
-                        onClick={() => setSelectedCategory('salad')}
+                        onClick={() => handleFilterClick('salad')}
                         className="btn bg-[#B49EBF] px-10 rounded-full hover:bg-[#B49EBF] text-white font-semibold font-paragraph ">SALAD</button>
 
                     <button
-                        onClick={() => setSelectedCategory('dessert')}
+                        onClick={() => handleFilterClick('dessert')}
                         className="btn bg-[#B49EBF] px-10 rounded-full hover:bg-[#B49EBF] text-white font-semibold font-paragraph ">DESSERT</button>
 
                     <button
-                        onClick={() => setSelectedCategory('soup')}
+                        onClick={() => handleFilterClick('soup')}
                         className="btn bg-[#B49EBF] px-10 rounded-full hover:bg-[#B49EBF] text-white font-semibold font-paragraph ">SOUP</button>
                 </div>
 
