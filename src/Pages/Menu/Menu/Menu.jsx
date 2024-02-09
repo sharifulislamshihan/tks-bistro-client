@@ -22,7 +22,7 @@ const Menu = () => {
 
     }, [menu])
 
-    const handleFilterClick = (category) =>{
+    const handleFilterClick = (category) => {
         setSelectedCategory(category)
     }
 
@@ -69,27 +69,64 @@ const Menu = () => {
                 <div className="flex flex-wrap gap-4 justify-center mx-20 pt-10">
                     <button
                         onClick={() => handleFilterClick('popular')}
-                        className="btn bg-[#B49EBF] px-10 rounded-full hover:bg-[#B49EBF] text-white font-semibold font-paragraph ">POPULAR</button>
+                        // className="btn bg-[#B49EBF] px-10 rounded-full hover:bg-[#B49EBF] text-white font-semibold font-paragraph "
+                        // dynamic class for active button
+                        className={`${selectedCategory === 'popular' ?
+                            'btn bg-[#B49EBF] px-10 rounded-full hover:bg-[#B49EBF] text-white font-semibold font-paragraph'
+                            :
+                            'btn btn-outline border-[#B49EBF] hover:border-[#B49EBF] px-10 rounded-full hover:bg-[#B49EBF] text-black font-semibold font-paragraph'
+                            }`}
+                    >POPULAR</button>
 
                     <button
                         onClick={() => handleFilterClick('offered')}
-                        className="btn bg-[#B49EBF] px-10 rounded-full hover:bg-[#B49EBF] text-white font-semibold font-paragraph ">OFFERED</button>
+                        // dynamic class for active button
+                        className={`${selectedCategory === 'offered' ?
+                            'btn bg-[#B49EBF] px-10 rounded-full hover:bg-[#B49EBF] text-white font-semibold font-paragraph'
+                            :
+                            'btn btn-outline border-[#B49EBF] hover:border-[#B49EBF] px-10 rounded-full hover:bg-[#B49EBF] text-black font-semibold font-paragraph'
+                            }`}
+                    >OFFERED</button>
 
                     <button
                         onClick={() => handleFilterClick('pizza')}
-                        className="btn bg-[#B49EBF] px-10 rounded-full hover:bg-[#B49EBF] text-white font-semibold font-paragraph ">PIZZA</button>
+                        // dynamic class for active button
+                        className={`${selectedCategory === 'pizza' ?
+                                'btn bg-[#B49EBF] px-10 rounded-full hover:bg-[#B49EBF] text-white font-semibold font-paragraph'
+                                :
+                                'btn btn-outline border-[#B49EBF] hover:border-[#B49EBF] px-10 rounded-full hover:bg-[#B49EBF] text-black font-semibold font-paragraph'
+                            }`}
+                    >PIZZA</button>
 
                     <button
                         onClick={() => handleFilterClick('salad')}
-                        className="btn bg-[#B49EBF] px-10 rounded-full hover:bg-[#B49EBF] text-white font-semibold font-paragraph ">SALAD</button>
+                        // dynamic class for active button
+                        className={`${selectedCategory === 'salad' ?
+                                'btn bg-[#B49EBF] px-10 rounded-full hover:bg-[#B49EBF] text-white font-semibold font-paragraph'
+                                :
+                                'btn btn-outline border-[#B49EBF] hover:border-[#B49EBF] px-10 rounded-full hover:bg-[#B49EBF] text-black font-semibold font-paragraph'
+                            }`}
+                    >SALAD</button>
 
                     <button
                         onClick={() => handleFilterClick('dessert')}
-                        className="btn bg-[#B49EBF] px-10 rounded-full hover:bg-[#B49EBF] text-white font-semibold font-paragraph ">DESSERT</button>
+                        // dynamic class for active button
+                        className={`${selectedCategory === 'dessert' ?
+                                'btn bg-[#B49EBF] px-10 rounded-full hover:bg-[#B49EBF] text-white font-semibold font-paragraph'
+                                :
+                                'btn btn-outline border-[#B49EBF] hover:border-[#B49EBF] px-10 rounded-full hover:bg-[#B49EBF] text-black font-semibold font-paragraph'
+                            }`}
+                    >DESSERT</button>
 
                     <button
                         onClick={() => handleFilterClick('soup')}
-                        className="btn bg-[#B49EBF] px-10 rounded-full hover:bg-[#B49EBF] text-white font-semibold font-paragraph ">SOUP</button>
+                        // dynamic class for active button
+                        className={`${selectedCategory === 'soup' ?
+                                'btn bg-[#B49EBF] px-10 rounded-full hover:bg-[#B49EBF] text-white font-semibold font-paragraph'
+                                :
+                                'btn btn-outline border-[#B49EBF] hover:border-[#B49EBF] px-10 rounded-full hover:bg-[#B49EBF] text-black font-semibold font-paragraph'
+                            }`}
+                    >SOUP</button>
                 </div>
 
 
