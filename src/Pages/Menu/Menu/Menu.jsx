@@ -13,7 +13,7 @@ const Menu = () => {
     console.log(selectedCategory);
     // fetching data from locally
     useEffect(() => {
-        fetch('menu.json')
+        fetch('http://localhost:5000/menu')
             .then(res => res.json())
             .then(data => {
                 setMenu(data)
@@ -92,9 +92,9 @@ const Menu = () => {
                         onClick={() => handleFilterClick('pizza')}
                         // dynamic class for active button
                         className={`${selectedCategory === 'pizza' ?
-                                'btn bg-[#B49EBF] px-10 rounded-full hover:bg-[#B49EBF] text-white font-semibold font-paragraph'
-                                :
-                                'btn btn-outline border-[#B49EBF] hover:border-[#B49EBF] px-10 rounded-full hover:bg-[#B49EBF] text-black font-semibold font-paragraph'
+                            'btn bg-[#B49EBF] px-10 rounded-full hover:bg-[#B49EBF] text-white font-semibold font-paragraph'
+                            :
+                            'btn btn-outline border-[#B49EBF] hover:border-[#B49EBF] px-10 rounded-full hover:bg-[#B49EBF] text-black font-semibold font-paragraph'
                             }`}
                     >PIZZA</button>
 
@@ -102,9 +102,9 @@ const Menu = () => {
                         onClick={() => handleFilterClick('salad')}
                         // dynamic class for active button
                         className={`${selectedCategory === 'salad' ?
-                                'btn bg-[#B49EBF] px-10 rounded-full hover:bg-[#B49EBF] text-white font-semibold font-paragraph'
-                                :
-                                'btn btn-outline border-[#B49EBF] hover:border-[#B49EBF] px-10 rounded-full hover:bg-[#B49EBF] text-black font-semibold font-paragraph'
+                            'btn bg-[#B49EBF] px-10 rounded-full hover:bg-[#B49EBF] text-white font-semibold font-paragraph'
+                            :
+                            'btn btn-outline border-[#B49EBF] hover:border-[#B49EBF] px-10 rounded-full hover:bg-[#B49EBF] text-black font-semibold font-paragraph'
                             }`}
                     >SALAD</button>
 
@@ -112,9 +112,9 @@ const Menu = () => {
                         onClick={() => handleFilterClick('dessert')}
                         // dynamic class for active button
                         className={`${selectedCategory === 'dessert' ?
-                                'btn bg-[#B49EBF] px-10 rounded-full hover:bg-[#B49EBF] text-white font-semibold font-paragraph'
-                                :
-                                'btn btn-outline border-[#B49EBF] hover:border-[#B49EBF] px-10 rounded-full hover:bg-[#B49EBF] text-black font-semibold font-paragraph'
+                            'btn bg-[#B49EBF] px-10 rounded-full hover:bg-[#B49EBF] text-white font-semibold font-paragraph'
+                            :
+                            'btn btn-outline border-[#B49EBF] hover:border-[#B49EBF] px-10 rounded-full hover:bg-[#B49EBF] text-black font-semibold font-paragraph'
                             }`}
                     >DESSERT</button>
 
@@ -122,11 +122,21 @@ const Menu = () => {
                         onClick={() => handleFilterClick('soup')}
                         // dynamic class for active button
                         className={`${selectedCategory === 'soup' ?
-                                'btn bg-[#B49EBF] px-10 rounded-full hover:bg-[#B49EBF] text-white font-semibold font-paragraph'
-                                :
-                                'btn btn-outline border-[#B49EBF] hover:border-[#B49EBF] px-10 rounded-full hover:bg-[#B49EBF] text-black font-semibold font-paragraph'
+                            'btn bg-[#B49EBF] px-10 rounded-full hover:bg-[#B49EBF] text-white font-semibold font-paragraph'
+                            :
+                            'btn btn-outline border-[#B49EBF] hover:border-[#B49EBF] px-10 rounded-full hover:bg-[#B49EBF] text-black font-semibold font-paragraph'
                             }`}
                     >SOUP</button>
+
+                    <button
+                        onClick={() => handleFilterClick('drinks')}
+                        // dynamic class for active button
+                        className={`${selectedCategory === 'drinks' ?
+                            'btn bg-[#B49EBF] px-10 rounded-full hover:bg-[#B49EBF] text-white font-semibold font-paragraph'
+                            :
+                            'btn btn-outline border-[#B49EBF] hover:border-[#B49EBF] px-10 rounded-full hover:bg-[#B49EBF] text-black font-semibold font-paragraph'
+                            }`}
+                    >DRINKS</button>
                 </div>
 
 

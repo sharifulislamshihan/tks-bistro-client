@@ -8,23 +8,23 @@ const Header = () => {
         <NavLink to='/' activeclassName="active">
             <li className=" text-base xl:text-lg text-black text-opacity-50 hover:text-opacity-100 font-normal font-heading py-2 px-3 md:p-0"><a>HOME</a></li>
         </NavLink>
-        <NavLink to='' activeclassName="active">
+        <NavLink to='menu' activeclassName="active">
             <li className=" text-base xl:text-lg text-black text-opacity-50 hover:text-opacity-100 font-normal font-heading py-2 px-3 md:p-0"><a>MENU</a></li>
         </NavLink>
-        <NavLink to='' activeclassName="active">
+        <NavLink to='services' activeclassName="active">
             <li className=" text-base xl:text-lg text-black text-opacity-50 hover:text-opacity-100 font-normal font-heading py-2 px-3 md:p-0"><a>SERVICES</a></li>
         </NavLink>
         <NavLink to='/'>
             <img src="https://i.ibb.co/WKhJqH9/Logo.png" className="w-3/4 md:w-1/2 mx-auto hidden lg:block" alt="Tks Bistro" />
         </NavLink>
-        <NavLink to='' activeclassName="active">
+        <NavLink to='privateChef' activeclassName="active">
             <li className=" text-base xl:text-lg text-black text-opacity-50 hover:text-opacity-100 font-normal font-heading py-2 px-3 md:p-0 "><a>PRIVATE CHEF</a></li>
         </NavLink>
-        <NavLink to='' activeclassName="active">
+        <NavLink to='/contactUs' activeclassName="active">
             <li className=" text-base xl:text-lg text-black text-opacity-50 hover:text-opacity-100 font-normal font-heading py-2 px-3 md:p-0 "><a>CONTACT US</a></li>
         </NavLink>
 
-        <NavLink to='' activeclassName="active">
+        <NavLink to='/login' activeclassName="active">
             <li className=" text-base xl:text-lg text-black text-opacity-50 hover:text-opacity-100 font-normal font-heading py-2 px-3 md:p-0 "><a>LOGIN</a></li>
         </NavLink>
     </>
