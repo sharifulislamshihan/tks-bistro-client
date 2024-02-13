@@ -18,6 +18,7 @@ const Login = () => {
 
                 {/* login form */}
                 <div className="card shrink-0 w-full max-w-sm shadow-2xl mx-auto mt-20 mb-32">
+                <h3 className="text-3xl font-semibold text-center pt-10">Login</h3>
                     <form className="card-body">
                         <div className="form-control">
                             <label className="label">
