@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaFacebook, FaGoogle, FaTwitter } from 'react-icons/fa';
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
@@ -9,13 +9,54 @@ import Swal from "sweetalert2";
 const Register = () => {
 
     const { createUser } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const handleRegister = e => {
         e.preventDefault();
         const form = e.target;
         const name = form.name.value;
+        const PhotoUrl = form.photoUrl.value;
         const email = form.email.value;
         const password = form.password.value;
+
+        // password validation
+        // if (password.length < 6) {
+        //     const Toast = Swal.mixin({
+        //         toast: true,
+        //         position: "top-end",
+        //         showConfirmButton: false,
+        //         timer: 2000,
+        //         timerProgressBar: true,
+        //         didOpen: (toast) => {
+        //             toast.onmouseenter = Swal.stopTimer;
+        //             toast.onmouseleave = Swal.resumeTimer;
+        //         }
+        //     });
+        //     Toast.fire({
+        //         icon: "error",
+        //         title: "Password should be atleast 6 characters"
+        //     });
+        //     return;
+        // }
+        // !/^(?=.*[A-Z])(?=.*[!@#$%^&*])(.{6,})$/.test(password)
+        // else if (!/^(?=.*[A-Z])(?=.*[!@#$%^&*])/.test(password)) {
+        //     const Toast = Swal.mixin({
+        //         toast: true,
+        //         position: "top-end",
+        //         showConfirmButton: false,
+        //         timer: 2000,
+        //         timerProgressBar: true,
+        //         didOpen: (toast) => {
+        //             toast.onmouseenter = Swal.stopTimer;
+        //             toast.onmouseleave = Swal.resumeTimer;
+        //         }
+        //     });
+        //     Toast.fire({
+        //         icon: "error",
+        //         title: "Password must contain atleast one capital letter and one special character"
+        //     });
+        //     return;
+        // }
 
 
         // creating user
@@ -23,6 +64,7 @@ const Register = () => {
             .then(res => {
                 res.user
                 Swal.fire("Account has been created.");
+                navigate('/');
             })
             // new user has been created
             .catch(error => {
@@ -70,6 +112,15 @@ const Register = () => {
                                 <span className="label-text text-lg font-heading">Name</span>
                             </label>
                             <input type="text" name="name" placeholder="name" className="input input-bordered" required />
+                        </div>
+
+
+                        {/* PhotoUrl */}
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text text-lg font-heading">PhotoUrl</span>
+                            </label>
+                            <input type="text" name="photoUrl" placeholder="Photo Url" className="input input-bordered" required />
                         </div>
 
                         {/* email */}

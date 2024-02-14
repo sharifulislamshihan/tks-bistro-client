@@ -48,13 +48,6 @@ const Header = () => {
         }
     </>
 
-    //     {/* <nav classNameName="h-56 bg-cover bg-no-repeat bg-center w-full" style={{
-    //     backgroundImage: `url(https://i.ibb.co/HXj3k2M/black-cracked-textured-wall-background.jpg)`
-    // }}>
-    //     {/* Overlay */}
-    //     <div classNameName="absolute inset-0 bg-yellow-700 bg-opacity-5"></div> 
-    //     </nav >
-
     return (
 
         <nav className="h-72 md:h-68 " >
@@ -90,7 +83,7 @@ const Header = () => {
 
             {/* menu bar in large device */}
 
-            <div className="items-center justify-center xl:gap-36 xl:pr-24 hidden w-full lg:flex flex-row lg:w-auto lg:order-1" id="navbar-cta">
+            <div className="items-center justify-center xl:pr-24 hidden w-full lg:flex flex-row lg:w-auto lg:order-1" id="navbar-cta">
                 <ul className="flex flex-row items-center xl:pl-40  font-medium p-4 space-x-3 xl:space-x-10">
                     <NavLink to='/' activeclassName="active">
                         <li className=" text-base xl:text-xl text-white text-opacity-50 hover:text-opacity-100 font-normal font-heading"><a>HOME</a></li>
@@ -109,6 +102,9 @@ const Header = () => {
                     </NavLink>
 
 
+                    <NavLink to='/contactUs' activeclassName="active">
+                        <li className=" text-base xl:text-xl text-white text-opacity-50 hover:text-opacity-100 font-normal font-heading "><a>CONTACT US</a></li>
+                    </NavLink>
 
                     {
                         user ?
@@ -123,15 +119,30 @@ const Header = () => {
                             </NavLink>
                     }
 
-                    <NavLink to='/contactUs' activeclassName="active">
-                        <li className=" text-base xl:text-xl text-white text-opacity-50 hover:text-opacity-100 font-normal font-heading "><a>CONTACT US</a></li>
-                    </NavLink>
                 </ul>
 
                 {/* get started button in lg device */}
-                {/* <div className="hidden lg:flex mx-20">
-                        <button type="button" className="btn lg:btn-md text-black bg-[#f4d699] font-heading  font-bold rounded-lg text-sm px-4 py-2 text-center">Get started</button>
-                    </div> */}
+
+                {
+                    user ?
+                        <>
+                            <div className="absolute right-36 avatar">
+                                <div className="w-16 rounded-full">
+                                    {
+                                        user.photoURL ? 
+
+                                        <img src={user.photoURL} />
+                                        :
+                                        <img src="https://i.ibb.co/bB7cpJG/image.png" alt="" />
+                                    }
+                                    
+                                </div>
+                            </div>
+                        </>
+                        :
+                        <>
+                        </>
+                }
             </div>
 
 
