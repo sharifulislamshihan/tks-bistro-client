@@ -1,10 +1,51 @@
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { FaFacebook, FaGoogle, FaTwitter } from 'react-icons/fa';
-
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const Register = () => {
+
+    const { createUser } = useContext(AuthContext);
+
+    const handleRegister = e => {
+        e.preventDefault();
+        const form = e.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+
+
+        // creating user
+        createUser(email, password)
+            .then(res => {
+                res.user
+                Swal.fire("Account has been created.");
+            })
+            // new user has been created
+            .catch(error => {
+                console.error(error);
+                const errorCode = error.code;
+                const errorMessage = error.message;
+
+                console.log(errorCode, errorMessage);
+
+                if (errorCode === 'auth/email-already-in-use') {
+                    Swal.fire('Error', 'Email is already in use.', 'error');
+                } else if (errorCode === 'auth/invalid-email') {
+                    Swal.fire('Error', 'Invalid email address.', 'error');
+                } else if (errorCode === 'auth/weak-password') {
+                    Swal.fire('Error', 'Password is too weak. It should be at least 6 characters.', 'error');
+                } else {
+                    Swal.fire('Error', 'An error occurred during registration.', 'error');
+                }
+            })
+        console.log(name, email, password);
+        form.reset();
+
+    }
     return (
         <div className="hero min-h-screen bg-[#F2ECE0] ">
             {/* helmet */}
@@ -22,7 +63,7 @@ const Register = () => {
                 {/* login form */}
                 <div className="card shrink-0 w-full max-w-sm shadow-2xl mx-auto mt-20 mb-32">
                     <h3 className="text-3xl font-semibold text-center pt-10">Sign Up</h3>
-                    <form className="card-body">
+                    <form onSubmit={handleRegister} className="card-body">
                         {/* name */}
                         <div className="form-control">
                             <label className="label">
@@ -52,6 +93,8 @@ const Register = () => {
 
 
                         <p className="font-paragraph text-sm">Already have an account? <Link to='/login' className="text-blue-500">Login</Link></p>
+
+                        <p className="text-center text-sm font-paragraph mt-4">or Sign up with</p>
                         <div className="flex space-x-3 mx-auto mt-5">
 
                             {/* Login with google */}
