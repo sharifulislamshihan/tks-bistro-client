@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaFacebook, FaGoogle, FaTwitter } from 'react-icons/fa';
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
@@ -8,6 +8,13 @@ import Swal from "sweetalert2";
 const Login = () => {
 
     const { signIn } = useContext(AuthContext);
+
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || "/";
+
+
 
 
     const handleLogin = e => {
@@ -37,7 +44,7 @@ const Login = () => {
 
 
                 // Navigate after location
-                //navigate(location?.state ? location.state : '/');
+                navigate( from, {replace : true});
 
             })
             .catch(error => {

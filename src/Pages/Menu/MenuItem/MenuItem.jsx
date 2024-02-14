@@ -11,8 +11,8 @@ const MenuItem = ({ item }) => {
             </div>
 
             <div className=" text-center xl:text-left flex flex-col  mx-5 my-auto">
-                <h3 className="text-2xl font-semibold font-heading text-[#41444B] hover:text-[#B49EBF] my-2">{name}<span className="text-lg font-normal"></span></h3>
-                <p className="text-base font-body font-normal text-slate-500 mr-6">{recipe}</p>
+                <h3 className="text-2xl font-semibold font-heading text-[#41444B] hover:text-[#B49EBF] my-5 lg:my-2">{name}<span className="text-lg font-normal"></span></h3>
+                <p className="text-base font-body font-normal text-slate-500 lg:mr-6 md:mx-28 my-5 lg:my-0 lg:mx-0">{recipe}</p>
             </div>
             <div className="flex flex-col my-auto gap-4 justify-end px-5">
                 <h3 className="text-2xl font-extrabold font-heading text-[#41444B] hover:text-[#B49EBF]">${price}</h3>

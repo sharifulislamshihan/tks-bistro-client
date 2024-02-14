@@ -1,12 +1,14 @@
 /* eslint-disable react/prop-types */
 import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
-import { Navigate } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 
 
 const PrivateRoute = ({ children }) => {
 
     const { user, loading } = useContext(AuthContext);
+    const location = useLocation();
+
 
     if (loading) {
         return <div className="flex items-center justify-center">
@@ -17,7 +19,9 @@ const PrivateRoute = ({ children }) => {
     if (user) {
         return children;
     }
-    return <Navigate to='/login'></Navigate>
+
+    // if there is no user it will navigate to login page
+    return <Navigate to='/login' state={{from: location}} replace></Navigate>
 
 };
 
