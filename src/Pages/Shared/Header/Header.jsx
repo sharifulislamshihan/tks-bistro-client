@@ -65,7 +65,26 @@ const Header = () => {
 
                 {/* get Started button for md and small device */}
                 <div className="text-center lg:hidden my-3">
-                    <button type="button" className="btn text-black bg-[#f4d699] font-heading font-bold rounded-lg text-sm px-4 py-2 text-center">Get started</button>
+                    {
+                        user ?
+                            <>
+                                <div className=" avatar">
+                                    <div className=" w-16 rounded-full">
+                                        {
+                                            user.photoURL ?
+
+                                                <img src={user.photoURL} />
+                                                :
+                                                <img src="https://i.ibb.co/bB7cpJG/image.png" alt="" />
+                                        }
+
+                                    </div>
+                                </div>
+                            </>
+                            :
+                            <>
+                            </>
+                    }
                 </div>
 
                 {/* dropDown form mid and small device */}
@@ -95,7 +114,7 @@ const Header = () => {
                         <li className=" text-base xl:text-xl text-white text-opacity-50 hover:text-opacity-100 font-normal font-heading"><a>SERVICES</a></li>
                     </NavLink>
                     <NavLink to='/'>
-                        <img src="https://i.ibb.co/LSJtGrZ/Logo.png" className="w-72 mx-5 hidden lg:block" alt="Tks Bistro" />
+                        <img src="https://i.ibb.co/LSJtGrZ/Logo.png" className=" lg:w-52 xl:w-72 mx-5 hidden lg:block" alt="Tks Bistro" />
                     </NavLink>
                     <NavLink to='/privateChef' activeclassName="active">
                         <li className=" text-base xl:text-xl text-white text-opacity-50 hover:text-opacity-100 font-normal font-heading"><a>PRIVATE CHEF</a></li>
@@ -119,23 +138,31 @@ const Header = () => {
                             </NavLink>
                     }
 
+                    <NavLink to='/contactUs' activeclassName="active">
+                        <li className=" text-base xl:text-xl text-white text-opacity-50 hover:text-opacity-100 font-normal font-heading "><a>MY ORDER</a></li>
+                    </NavLink>
+
                 </ul>
 
                 {/* get started button in lg device */}
 
+
+
                 {
                     user ?
-                        <>
-                            <div className="absolute right-36 avatar">
-                                <div className="w-16 rounded-full">
-                                    {
-                                        user.photoURL ? 
 
-                                        <img src={user.photoURL} />
-                                        :
-                                        <img src="https://i.ibb.co/bB7cpJG/image.png" alt="" />
+                        <>
+
+                            <div className="absolute xl:right-10 lg:right-5 avatar">
+                                <div className=" lg:w-10 xl:w-16 rounded-full">
+                                    {
+                                        user.photoURL ?
+
+                                            <img src={user.photoURL} />
+                                            :
+                                            <img src="https://i.ibb.co/bB7cpJG/image.png" alt="" />
                                     }
-                                    
+
                                 </div>
                             </div>
                         </>
