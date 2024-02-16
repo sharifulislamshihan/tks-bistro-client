@@ -3,18 +3,50 @@
 
 import Swal from "sweetalert2";
 import useAuth from "../../../Hooks/useAuth";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+import useCart from "../../../Hooks/useCart";
+
 
 const MenuItem = ({ item }) => {
-    const { name, image, recipe, price } = item;
+    const { name, image, recipe, price, _id } = item;
     // use of custom hooks
     const { user } = useAuth();
     const navigate = useNavigate();
+    const location = useLocation();
+    const axiosSecure = useAxiosSecure();
+    const [, refetch] = useCart();
 
 
-    const handleAddToCart = food => {
+
+    const handleAddToCart = () => {
         if (user && user.email) {
-            // TODO: send cart to the database
+            // sending data to the database
+            const cartItem = {
+                menuId : _id,
+                email: user.email,
+                name,
+                image,
+                price
+            }
+            axiosSecure.post('/carts', cartItem)
+            .then(res => {
+                console.log(res.data)
+                // when data successfully added into database 
+                if(res.data.insertedId){
+                    // showing sweet alert
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: "Your Order has been added",
+                        showConfirmButton: false,
+                        timer: 1500
+                      });
+
+                    //   refetch the cart to update the cart items count
+                    refetch()
+                }
+            })
         }
         else {
             // or alert
@@ -29,7 +61,7 @@ const MenuItem = ({ item }) => {
             }).then((result) => {
                 if (result.isConfirmed) {
                     //    send user to the login page
-                    navigate('/login')
+                    navigate('/login', { state: { from: location } })
 
                     // to open the top of the page at first
                     window.scrollTo(0, 0);
@@ -52,7 +84,7 @@ const MenuItem = ({ item }) => {
             <div className="flex flex-col my-auto gap-4 justify-end px-5">
                 <h3 className="text-2xl font-extrabold font-heading text-[#41444B] hover:text-[#B49EBF]">${price}</h3>
                 <button
-                    onClick={() => handleAddToCart(item)}
+                    onClick={handleAddToCart()}
                     className="btn btn-outline border-[#B49EBF] text-[#B49EBF] hover:text-white hover:bg-[#B49EBF] hover:border-[#B49EBF]  mx-auto px-8 text-sm">Order Now</button>
             </div>
         </div>

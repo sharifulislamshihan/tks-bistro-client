@@ -7,7 +7,9 @@ import PrivateChef from "../Pages/PrivateChef/PrivateChef/PrivateChef";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import ContactUs from "../Pages/ContactUs/ContuctUs/ContactUs";
-import PrivateRoute from "./privateRoute";
+import MyOrder from "../Pages/MyOrder/MyOrder";
+
+
 
 export const router = createBrowserRouter([
     {
@@ -41,6 +43,10 @@ export const router = createBrowserRouter([
             {
                 path: '/contactUs',
                 element: <ContactUs></ContactUs>
+            },
+            {
+                path: '/myOrder',
+                element: <MyOrder></MyOrder>
             }
         ]
     }

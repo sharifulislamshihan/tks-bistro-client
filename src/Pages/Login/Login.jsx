@@ -13,6 +13,7 @@ const Login = () => {
     const location = useLocation();
 
     const from = location.state?.from?.pathname || "/";
+    //console.log("state in the login page", location.state);
 
     const handleLogin = e => {
         e.preventDefault();
@@ -129,6 +130,8 @@ const Login = () => {
                     icon: "success",
                     title: "Signed in successfully"
                 });
+                // Navigate after location
+                navigate(from, { replace: true });
             })
             // eslint-disable-next-line no-unused-vars
             .catch(error => {

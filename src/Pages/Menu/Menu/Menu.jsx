@@ -10,7 +10,7 @@ const Menu = () => {
     const [menu, setMenu] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState(null);
 
-    console.log(selectedCategory);
+    //console.log(selectedCategory);
     // fetching data from locally
     useEffect(() => {
         fetch('http://localhost:5000/menu')
@@ -18,7 +18,7 @@ const Menu = () => {
             .then(data => {
                 setMenu(data)
             })
-        console.log(menu);
+        //console.log(menu);
 
     }, [menu])
 
@@ -35,7 +35,7 @@ const Menu = () => {
         :
         // else show all the menu
         menu
-    console.log(filteredMenu);
+    //console.log(filteredMenu);
 
 
     return (
