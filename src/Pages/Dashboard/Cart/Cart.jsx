@@ -1,10 +1,42 @@
 import { FaTrash } from "react-icons/fa";
 import useCart from "../../../Hooks/useCart";
+import Swal from "sweetalert2";
+import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 
 const Cart = () => {
-    const [cart] = useCart();
+    const [cart, refetch] = useCart();
     //using reduce funtion to sumup the price
-    const totalPrice = cart.reduce((total, item) => total + item.price, 0)
+    const totalPrice = cart.reduce((total, item) => total + item.price, 0);
+
+    const axiosSecure = useAxiosSecure()
+
+    // to delete order food
+    const handleDelete = id => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                axiosSecure.delete(`/carts/${id}`)
+                    .then(res => {
+                        if (res.data.deletedCount > 0) {
+                            refetch();
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Your file has been deleted.",
+                                icon: "success"
+                            });
+                        }
+                    })
+            }
+        });
+
+    }
     return (
         <div className="mt-20">
             <h3 className="text-4xl font-heading text-center font font-bold">Welcome To TKS Bistro</h3>
@@ -37,7 +69,7 @@ const Cart = () => {
                             cart.map((item, index) => <tr key={item._id}>
 
                                 <td>
-                                    {index+1}
+                                    {index + 1}
                                 </td>
 
                                 <td>
@@ -54,7 +86,9 @@ const Cart = () => {
                                 </td>
                                 <td className="text-lg font-paragraph font-bold">{item.price}</td>
                                 <th>
-                                    <button className="btn btn-ghost text-lg">
+                                    <button
+                                        onClick={() => handleDelete(item._id)}
+                                        className="btn btn-ghost text-lg">
                                         <FaTrash></FaTrash>
                                     </button>
                                 </th>
