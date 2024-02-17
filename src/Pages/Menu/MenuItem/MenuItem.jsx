@@ -19,34 +19,31 @@ const MenuItem = ({ item }) => {
 
 
 
-    const handleAddToCart = () => {
+    const handleAddToCart = food => {
         if (user && user.email) {
             // sending data to the database
             const cartItem = {
-                menuId : _id,
+                menuId: _id,
                 email: user.email,
                 name,
                 image,
                 price
             }
             axiosSecure.post('/carts', cartItem)
-            .then(res => {
-                console.log(res.data)
-                // when data successfully added into database 
-                if(res.data.insertedId){
-                    // showing sweet alert
-                    Swal.fire({
-                        position: "top-end",
-                        icon: "success",
-                        title: "Your Order has been added",
-                        showConfirmButton: false,
-                        timer: 1500
-                      });
-
-                    //   refetch the cart to update the cart items count
-                    refetch()
-                }
-            })
+                .then(res => {
+                    console.log(res.data)
+                    if (res.data.insertedId) {
+                        Swal.fire({
+                            position: "top-end",
+                            icon: "success",
+                            title: "Your Order has been added",
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                        // to fetch again
+                        refetch();
+                    }
+                })
         }
         else {
             // or alert
@@ -84,7 +81,7 @@ const MenuItem = ({ item }) => {
             <div className="flex flex-col my-auto gap-4 justify-end px-5">
                 <h3 className="text-2xl font-extrabold font-heading text-[#41444B] hover:text-[#B49EBF]">${price}</h3>
                 <button
-                    onClick={handleAddToCart()}
+                    onClick={() => handleAddToCart(item)}
                     className="btn btn-outline border-[#B49EBF] text-[#B49EBF] hover:text-white hover:bg-[#B49EBF] hover:border-[#B49EBF]  mx-auto px-8 text-sm">Order Now</button>
             </div>
         </div>

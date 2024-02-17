@@ -36,7 +36,7 @@ const Header = () => {
             <li className=" text-base xl:text-lg text-black text-opacity-50 hover:text-opacity-100 font-normal font-heading py-2 px-3 md:p-0 "><a>CONTACT US</a></li>
         </NavLink>
 
-        <NavLink to='/myOrder' activeclassName="active">
+        <NavLink to='/dashboard/cart' activeclassName="active">
             <li className=" text-base xl:text-lg text-black text-opacity-50 hover:text-opacity-100 font-normal font-heading py-2 px-3 md:p-0 "><a>MY ORDER</a></li>
         </NavLink>
 
@@ -144,7 +144,7 @@ const Header = () => {
                             </NavLink>
                     }
 
-                    <NavLink to='/myOrder' activeclassName="active">
+                    <NavLink to='/dashboard/cart' activeclassName="active">
                         <li className=" text-base xl:text-xl text-white text-opacity-50 hover:text-opacity-100 font-normal font-heading "><a>MY ORDER</a></li>
                     </NavLink>
 
