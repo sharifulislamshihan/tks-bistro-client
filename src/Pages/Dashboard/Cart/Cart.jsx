@@ -46,7 +46,7 @@ const Cart = () => {
 
                 <h2 className="text-xl text-black">Total Price: <span className="font-bold">{totalPrice.toFixed(2)}</span></h2>
 
-                <button className="btn btn-primary">Pay</button>
+                <button className="btn btn-primary px-5">Pay</button>
             </div>
 
             <div className="overflow-x-auto w-full">

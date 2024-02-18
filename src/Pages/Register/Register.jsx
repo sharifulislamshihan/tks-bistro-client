@@ -4,11 +4,13 @@ import { FaFacebook, FaGoogle, FaTwitter } from 'react-icons/fa';
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
 
 
 const Register = () => {
 
     const { createUser } = useContext(AuthContext);
+    const axiosPublic = useAxiosPublic();
     const navigate = useNavigate();
 
     const handleRegister = e => {
@@ -18,6 +20,15 @@ const Register = () => {
         const PhotoUrl = form.photoUrl.value;
         const email = form.email.value;
         const password = form.password.value;
+
+        const user = {
+            name: name,
+            photoUrl: PhotoUrl,
+            email: email,
+            password: password
+        }
+
+        console.log(user);
 
         // password validation
         // if (password.length < 6) {
@@ -62,9 +73,23 @@ const Register = () => {
         // creating user
         createUser(email, password)
             .then(res => {
-                res.user
-                Swal.fire("Account has been created.");
-                navigate('/');
+
+                // create user in the database
+                const userInfo = {
+                    name: name,
+                    email: email,
+                    password: password
+                }
+                // console.log(userInfo);
+                axiosPublic.post('/users', userInfo)
+                    .then(res => {
+                        // console.log(res);
+                        if (res.data.insertedId) {
+                            form.reset();
+                            Swal.fire("Account has been created.");
+                            navigate('/');
+                        }
+                    })
             })
             // new user has been created
             .catch(error => {

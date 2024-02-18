@@ -4,6 +4,7 @@ import { FaCalendar, FaCalendarCheck, FaHome, FaList, FaMoneyBill, FaShoppingCar
 const Dashboard = () => {
     return (
         <div className="flex bg-[#f2ece0]">
+            
             {/* dashboard sidebar */}
             <div className="w-80 min-h-screen bg-[#3c220c]">
                 <ul className="menu py-10 px-6 space-y-7">
@@ -50,15 +51,15 @@ const Dashboard = () => {
 
                     <div className="divider divider-neutral"></div>
 
-                    <li 
-                    className=" text-lg xl:text-xl text-[#f2ece0]  font-normal font-heading py-2 px-3 md:p-0 ">
+                    <li
+                        className=" text-lg xl:text-xl text-[#f2ece0]  font-normal font-heading py-2 px-3 md:p-0 ">
                         <NavLink to='/'>
                             <FaHome></FaHome>
                             HOME</NavLink>
                     </li>
 
-                    <li 
-                    className=" text-lg xl:text-xl text-[#f2ece0]  font-normal font-heading py-2 px-3 md:p-0 ">
+                    <li
+                        className=" text-lg xl:text-xl text-[#f2ece0]  font-normal font-heading py-2 px-3 md:p-0 ">
                         <NavLink to='/menu'>
                             <FaList></FaList>
                             MENU</NavLink>
