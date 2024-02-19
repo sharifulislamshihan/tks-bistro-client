@@ -9,7 +9,7 @@ import useAxiosPublic from "../../Hooks/useAxiosPublic";
 
 const Register = () => {
 
-    const { createUser } = useContext(AuthContext);
+    const { createUser, signInWithGoogle } = useContext(AuthContext);
     const axiosPublic = useAxiosPublic();
     const navigate = useNavigate();
 
@@ -113,6 +113,62 @@ const Register = () => {
         form.reset();
 
     }
+
+    // handle login using direct email
+
+    const handleGoogleSignIn = () => {
+        signInWithGoogle()
+            .then(res => {
+                res.user
+                // sending data to database who sign in using google
+                const userInfo = {
+                    name: res.user?.displayName,
+                    email: res.user?.email,
+                }
+                axiosPublic.post('/users', userInfo)
+                .then(res =>{
+                    console.log(res.data);
+                    navigate('/');
+                })
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: "top-end",
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.onmouseenter = Swal.stopTimer;
+                        toast.onmouseleave = Swal.resumeTimer;
+                    }
+                });
+                Toast.fire({
+                    icon: "success",
+                    title: "Signed in successfully"
+                });
+                // Navigate after location
+                //navigate(from, { replace: true });
+            })
+            // eslint-disable-next-line no-unused-vars
+            .catch(error => {
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: "top-end",
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.onmouseenter = Swal.stopTimer;
+                        toast.onmouseleave = Swal.resumeTimer;
+                    }
+                });
+                Toast.fire({
+                    icon: "error",
+                    title: "Something went wrong. Try again!"
+                });
+
+            })
+    }
+
     return (
         <div className="hero min-h-screen bg-[#F2ECE0] ">
             {/* helmet */}
@@ -174,7 +230,7 @@ const Register = () => {
                         <div className="flex space-x-3 mx-auto mt-5">
 
                             {/* Login with google */}
-                            <button className="btn border border-solid hover:bg-[#F4D699] font-heading text-lg"><FaGoogle className="text-xl"></FaGoogle></button>
+                            <button onClick={handleGoogleSignIn} className="btn border border-solid hover:bg-[#F4D699] font-heading text-lg"><FaGoogle className="text-xl"></FaGoogle></button>
                             {/* login with facebook */}
                             <button className="btn border border-solid hover:bg-[#F4D699] font-heading text-lg"><FaFacebook className="text-xl"></FaFacebook></button>
                             {/* login with twitter */}
