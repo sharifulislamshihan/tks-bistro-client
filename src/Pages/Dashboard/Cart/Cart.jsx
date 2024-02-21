@@ -3,8 +3,10 @@ import useCart from "../../../Hooks/useCart";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 
+
 const Cart = () => {
     const [cart, refetch] = useCart();
+    
     //using reduce funtion to sumup the price
     const totalPrice = cart.reduce((total, item) => total + item.price, 0);
 
