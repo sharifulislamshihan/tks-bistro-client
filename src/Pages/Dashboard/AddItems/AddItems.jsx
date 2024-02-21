@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 const AddItems = () => {
-    const { register, handleSubmit } = useForm()
+    const { register, handleSubmit, reset } = useForm()
     const axiosPublic = useAxiosPublic();
     const axiosSecure = useAxiosSecure();
     const onSubmit = async (data) => {
@@ -34,6 +34,7 @@ const AddItems = () => {
             console.log(menuResponse.data);
             if (menuResponse.data.insertedId) {
                 // show successful toast
+                reset();
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
@@ -41,6 +42,7 @@ const AddItems = () => {
                     showConfirmButton: false,
                     timer: 1200
                 });
+                
             }
         }
         console.log('image url', res.data);
@@ -56,7 +58,7 @@ const AddItems = () => {
 
             {/* using react hook form */}
 
-            <div>
+            <div className=" mx-10 xl:mx-52">
                 <form onSubmit={handleSubmit(onSubmit)}>
 
                     <div className="form-control w-full my-6">
