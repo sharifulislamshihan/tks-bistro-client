@@ -12,8 +12,8 @@ const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_ke
 const UpdateItem = () => {
 
 
-    const item = useLoaderData();
-    console.log(item);
+    const { _id, name, category, recipe, price } = useLoaderData();
+    //console.log(item);
 
     const { register, handleSubmit, reset } = useForm()
     const axiosPublic = useAxiosPublic();
@@ -29,6 +29,7 @@ const UpdateItem = () => {
         })
         console.log(res.data);
         if (res.data.success) {
+            // todo: model still not working
             // sending data to the server with hosted image link
             const menuItem = {
                 name: data.name,
@@ -38,15 +39,15 @@ const UpdateItem = () => {
                 image: res.data.data.display_url,
             }
             // 
-            const menuResponse = await axiosSecure.post('/menu', menuItem)
+            const menuResponse = await axiosSecure.patch(`/menu/${_id}`, menuItem).then((resp) => resp.data)
             console.log(menuResponse.data);
-            if (menuResponse.data.insertedId) {
+            if (menuResponse.data.modifiedCount > 0) {
                 // show successful toast
                 reset();
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
-                    title: "Item added successfully",
+                    title: `${menuItem.name} has been updated`,
                     showConfirmButton: false,
                     timer: 1200
                 });
@@ -62,7 +63,7 @@ const UpdateItem = () => {
                 <h3 className="text-lg font-heading font-semibold text-slate-500 text-center mt-5
                 ">Whats new?</h3>
 
-                <h3 className="text-3xl font-bold font-paragraph  my-7 text-center text-">UPDATE AN ITEM : <span className="font-paragraph text-slate-600">{item.name}</span></h3>
+                <h3 className="text-3xl font-bold font-paragraph  my-7 text-center text-">UPDATE AN ITEM : <span className="font-paragraph text-slate-600">{name}</span></h3>
             </div>
 
             {/* using react hook form */}
@@ -77,7 +78,8 @@ const UpdateItem = () => {
                         </label>
                         <input
                             type="text"
-                            placeholder="Recipe Name"
+                            defaultValue={name}
+                            placeholder={name}
                             {...register('name', { required: true })}
 
                             className="input input-bordered w-full" />
@@ -91,7 +93,7 @@ const UpdateItem = () => {
                                 <span className="label-text text-xl font-heading font-bold">Category*</span>
                             </label>
                             <select
-                                defaultValue="default"
+                                defaultValue={category}
                                 {...register("category")}
                                 className="select select-bordered w-full">
                                 <option disabled value='default'>Select a Category</option>
@@ -110,7 +112,8 @@ const UpdateItem = () => {
                             </label>
                             <input
                                 type="number"
-                                placeholder="Price"
+                                defaultValue={price}
+                                placeholder={price}
                                 {...register('price', { required: true })}
                                 className="input input-bordered w-full" />
                         </div>
@@ -124,7 +127,9 @@ const UpdateItem = () => {
                         </label>
                         {/* lg */}
                         <textarea
-                            placeholder="Recipe Details" className="textarea textarea-bordered w-full"
+                            defaultValue={recipe}
+                            placeholder={recipe}
+                            className="textarea textarea-bordered w-full"
                             {...register('recipe', { required: true })}
                         ></textarea>
                     </div>
@@ -142,7 +147,7 @@ const UpdateItem = () => {
                     <div className="flex justify-center">
                         <button
                             className="btn btn-outline btn-[#F4D699] hover:bg-[#F4D699]  rounded-full px-20 text-center text-base lg:text-lg font-semibold font-body text-black hover:text-black my-5 lg:my-7">
-                            Add Item
+                            Update Menu Item
                         </button>
                     </div>
 
