@@ -42,17 +42,6 @@ const Header = () => {
             <li className=" text-base xl:text-lg text-black text-opacity-50 hover:text-opacity-100 font-normal font-heading py-2 px-3 md:p-0 "><a>CONTACT US</a></li>
         </NavLink>
 
-        {/* {
-            isAdmin ?
-
-                <NavLink to='/dashboard' activeclassName="active">
-                    <li className=" text-base xl:text-lg text-black text-opacity-50 hover:text-opacity-100 font-normal font-heading py-2 px-3 md:p-0 "><a>Dashboard</a></li>
-                </NavLink>
-
-
-                :
-                
-        } */}
 
         {
             user && isAdmin && <NavLink to='/dashboard/adminHome' activeclassName="active">
@@ -66,9 +55,6 @@ const Header = () => {
             </NavLink>
         }
 
-        <NavLink to='/dashboard/cart' activeclassName="active">
-            <li className=" text-base xl:text-lg text-black text-opacity-50 hover:text-opacity-100 font-normal font-heading py-2 px-3 md:p-0 "><a>MY ORDER</a></li>
-        </NavLink>
         {
             user ?
                 // logout
@@ -172,7 +158,7 @@ const Header = () => {
                                 <li className=" text-base xl:text-lg text-white text-opacity-50 hover:text-opacity-100 font-normal font-heading py-2 px-3 md:p-0 "><a>LOGIN</a></li>
                             </NavLink>
                     }
-                    {/* funcutional dashboard and my cart */}
+                    {/* functional dashboard and my cart */}
                     {
                         user && isAdmin && <NavLink to='/dashboard/adminHome' activeclassName="active">
                             <li className=" text-base xl:text-lg text-white text-opacity-50 hover:text-opacity-100 font-normal font-heading  "><a>DASHBOARD</a></li>
