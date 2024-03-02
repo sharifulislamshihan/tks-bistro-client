@@ -3,7 +3,7 @@
 const AdminHome = () => {
     return (
         <div>
-            <h3>This is admin home</h3>
+            <h3 className="text-xl font-bold font-paragraph">Hi, Welcome Back..</h3>
         </div>
     );
 };

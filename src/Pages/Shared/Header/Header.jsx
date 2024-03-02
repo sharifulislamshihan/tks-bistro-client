@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProvider";
+import useAdmin from "../../../Hooks/useAdmin";
 
 
 const Header = () => {
@@ -9,6 +10,10 @@ const Header = () => {
     // TODO: make MYCART to DASHBOARD for admin
 
     const { user, logOut } = useContext(AuthContext);
+
+    const [isAdmin] = useAdmin();
+    //console.log(isAdmin);
+
 
     const handleLogOut = () => {
         logOut()
@@ -37,10 +42,33 @@ const Header = () => {
             <li className=" text-base xl:text-lg text-black text-opacity-50 hover:text-opacity-100 font-normal font-heading py-2 px-3 md:p-0 "><a>CONTACT US</a></li>
         </NavLink>
 
+        {/* {
+            isAdmin ?
+
+                <NavLink to='/dashboard' activeclassName="active">
+                    <li className=" text-base xl:text-lg text-black text-opacity-50 hover:text-opacity-100 font-normal font-heading py-2 px-3 md:p-0 "><a>Dashboard</a></li>
+                </NavLink>
+
+
+                :
+                
+        } */}
+
+        {
+            user && isAdmin && <NavLink to='/dashboard/adminHome' activeclassName="active">
+                <li className=" text-base xl:text-lg text-black text-opacity-50 hover:text-opacity-100 font-normal font-heading py-2 px-3 md:p-0 "><a>DASHBOARD</a></li>
+            </NavLink>
+        }
+
+        {
+            user && !isAdmin && <NavLink to='/dashboard/cart' activeclassName="active">
+                <li className=" text-base xl:text-lg text-black text-opacity-50 hover:text-opacity-100 font-normal font-heading py-2 px-3 md:p-0 "><a>MY ORDER</a></li>
+            </NavLink>
+        }
+
         <NavLink to='/dashboard/cart' activeclassName="active">
             <li className=" text-base xl:text-lg text-black text-opacity-50 hover:text-opacity-100 font-normal font-heading py-2 px-3 md:p-0 "><a>MY ORDER</a></li>
         </NavLink>
-
         {
             user ?
                 // logout
@@ -112,24 +140,24 @@ const Header = () => {
             <div className="items-center justify-center xl:pr-24 hidden w-full lg:flex flex-row lg:w-auto lg:order-1" id="navbar-cta">
                 <ul className="flex flex-row items-center xl:pl-40  font-medium p-4 space-x-3 xl:space-x-10">
                     <NavLink to='/' activeclassName="active">
-                        <li className=" text-base xl:text-xl text-white text-opacity-50 hover:text-opacity-100 font-normal font-heading"><a>HOME</a></li>
+                        <li className=" text-base xl:text-lg text-white text-opacity-50 hover:text-opacity-100 font-normal font-heading"><a>HOME</a></li>
                     </NavLink>
                     <NavLink to='/menu' activeclassName="active">
-                        <li className=" text-base xl:text-xl text-white text-opacity-50 hover:text-opacity-100 font-normal font-heading"><a>MENU</a></li>
+                        <li className=" text-base xl:text-lg text-white text-opacity-50 hover:text-opacity-100 font-normal font-heading"><a>MENU</a></li>
                     </NavLink>
                     <NavLink to='/services' activeclassName="active">
-                        <li className=" text-base xl:text-xl text-white text-opacity-50 hover:text-opacity-100 font-normal font-heading"><a>SERVICES</a></li>
+                        <li className=" text-base xl:text-lg text-white text-opacity-50 hover:text-opacity-100 font-normal font-heading"><a>SERVICES</a></li>
                     </NavLink>
                     <NavLink to='/'>
                         <img src="https://i.ibb.co/LSJtGrZ/Logo.png" className=" lg:w-52 xl:w-72 mx-5 hidden lg:block" alt="Tks Bistro" />
                     </NavLink>
                     <NavLink to='/privateChef' activeclassName="active">
-                        <li className=" text-base xl:text-xl text-white text-opacity-50 hover:text-opacity-100 font-normal font-heading"><a>PRIVATE CHEF</a></li>
+                        <li className=" text-base xl:text-lg text-white text-opacity-50 hover:text-opacity-100 font-normal font-heading"><a>PRIVATE CHEF</a></li>
                     </NavLink>
 
 
                     <NavLink to='/contactUs' activeclassName="active">
-                        <li className=" text-base xl:text-xl text-white text-opacity-50 hover:text-opacity-100 font-normal font-heading "><a>CONTACT US</a></li>
+                        <li className=" text-base xl:text-lg text-white text-opacity-50 hover:text-opacity-100 font-normal font-heading "><a>CONTACT US</a></li>
                     </NavLink>
 
                     {
@@ -144,11 +172,18 @@ const Header = () => {
                                 <li className=" text-base xl:text-lg text-white text-opacity-50 hover:text-opacity-100 font-normal font-heading py-2 px-3 md:p-0 "><a>LOGIN</a></li>
                             </NavLink>
                     }
+                    {/* funcutional dashboard and my cart */}
+                    {
+                        user && isAdmin && <NavLink to='/dashboard/adminHome' activeclassName="active">
+                            <li className=" text-base xl:text-lg text-white text-opacity-50 hover:text-opacity-100 font-normal font-heading  "><a>DASHBOARD</a></li>
+                        </NavLink>
+                    }
 
-                    <NavLink to='/dashboard/cart' activeclassName="active">
-                        <li className=" text-base xl:text-xl text-white text-opacity-50 hover:text-opacity-100 font-normal font-heading "><a>MY ORDER</a></li>
-                    </NavLink>
-
+                    {
+                        user && !isAdmin && <NavLink to='/dashboard/cart' activeclassName="active">
+                            <li className="text-base xl:text-lg text-white text-opacity-50 hover:text-opacity-100 font-normal font-heading  "><a>MY ORDER</a></li>
+                        </NavLink>
+                    }
                 </ul>
 
                 {/* get started button in lg device */}
