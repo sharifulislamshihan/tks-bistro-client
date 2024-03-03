@@ -46,7 +46,7 @@ const Cart = () => {
             <div className="flex justify-evenly mt-16 mb-20 items-center">
                 <h2 className="text-xl text-black">Items : <span className="font-bold"> {cart.length}</span></h2>
 
-                <h2 className="text-xl text-black">Total Price: <span className="font-bold">{totalPrice.toFixed(2)}</span></h2>
+                <h2 className="text-xl text-black">Total Price: <span className="font-bold">${totalPrice.toFixed(2)}</span></h2>
 
                 <button className="btn btn-primary px-5">Pay</button>
             </div>
@@ -86,7 +86,7 @@ const Cart = () => {
                                 <td className="text-lg font-paragraph font-bold">
                                     {item.name}
                                 </td>
-                                <td className="text-lg font-paragraph font-bold">{item.price}</td>
+                                <td className="text-lg font-paragraph font-bold">${item.price}</td>
                                 <th>
                                     <button
                                         onClick={() => handleDelete(item._id)}
