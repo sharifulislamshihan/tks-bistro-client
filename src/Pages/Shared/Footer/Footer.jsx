@@ -24,7 +24,7 @@ const Footer = () => {
                                     <div className="relative">
                                         <input type="email" id="search" className="block w-full md:w-96 py-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-full bg-gray-50 focus:ring-[#f4d699] focus:border-[#f4d699] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your Email" />
 
-                                        <button type="submit" className="text-black font-heading font-medium my-auto absolute top-0 -end-2 bottom-0 bg-[#f4d699] hover:bg-[#f4d699] focus:ring-4 focus:outline-none focus:ring-[#f4d699]  rounded-full text-lg px-6 md:px-12 py-4 dark:bg-[#f4d699] dark:hover:bg-[#f4d699] dark:focus:ring-[#f4d699]">Sign Up</button>
+                                        <button type="submit" className="text-black font-heading font-medium absolute top-0 -end-2 bottom-0 bg-[#f4d699] hover:bg-[#f4d699] focus:ring-4 focus:outline-none focus:ring-[#f4d699]  rounded-full text-lg px-6 md:px-12  dark:bg-[#f4d699] dark:hover:bg-[#f4d699] dark:focus:ring-[#f4d699]">Sign Up</button>
                                     </div>
                                 </form>
 
@@ -90,27 +90,27 @@ const Footer = () => {
                                 <div>
                                     <h2 className="mb-10 text-lg font-semibold font-heading text-white uppercase dark:text-white">SOCIAL</h2>
                                     <div className="text-slate-400 font-paragraph text-base text-center dark:text-white font-medium">
-                                        <Link>
+                                        <a href="https://www.facebook.com/sham.shihan41/">
                                             <h3 className=" my-3 hover:text-yellow-200 ">Facebook</h3>
-                                        </Link>
-                                        <Link>
+                                        </a>
+                                        <a href="https://www.instagram.com/mr_shihan/">
                                             <h3 className="mb-3 hover:text-yellow-200">Instagram</h3>
-                                        </Link>
-                                        <Link>
+                                        </a>
+                                        <a href="www.linkedin.com/in/shariful-islam-shihan">
                                             <h3 className="mb-3 hover:text-yellow-200">LinkedIn</h3>
-                                        </Link>
-                                        <Link>
+                                        </a>
+                                        <a href="https://github.com/sharifulislamshihan">
                                             <h3 className="mb-3 hover:text-yellow-200">Github</h3>
-                                        </Link>
+                                        </a>
                                     </div>
                                 </div>
 
 
                             </div>
                         </div>
-                        <hr className="my-6 border-gray-200 mx-auto dark:border-gray-700 lg:my-8" />
+                        <hr className="my-6 border-gray-200 mx-auto lg:my-8" />
                         <div className="text-center">
-                            <span className="text-sm text-gray-500 text-center dark:text-gray-400">© 2024 <a href="https://flowbite.com/" className="hover:underline">TKS BISTRO™</a>. All Rights Reserved.
+                            <span className="text-sm text-gray-500 text-center dark:text-gray-400">© 2024 TKS BISTRO™. All Rights Reserved.
                             </span>
                         </div>
                     </div>
