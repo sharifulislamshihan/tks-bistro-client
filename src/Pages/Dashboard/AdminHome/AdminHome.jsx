@@ -35,7 +35,7 @@ const AdminHome = () => {
                             <FaUserFriends className="text-3xl font-bold"></FaUserFriends>
                         </div>
                         <div className="stat-title">Users</div>
-                        <div className="stat-value">10</div>
+                        <div className="stat-value">20</div>
                     </div>
 
                     <div className="stat">

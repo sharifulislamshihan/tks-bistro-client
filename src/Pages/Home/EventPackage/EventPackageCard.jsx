@@ -3,7 +3,7 @@
 const EventPackageCard = () => {
     return (
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7 xl:gap-10 mx-10 md:mx-32 xl:mx-80">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7 xl:gap-10 mx-10 md:mx-20 xl:mx-52">
 
 
             {/* 1 */}

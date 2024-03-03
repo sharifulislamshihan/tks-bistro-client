@@ -9,6 +9,7 @@ import SublimeSection from "../SublimeSection/SublimeSection";
 
 
 const Home = () => {
+    window.scrollTo(0,0);
     return (
         <div className="bg-[#F2ECE0]">
             {/* helmet */}

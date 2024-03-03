@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import useAdmin from "../../../Hooks/useAdmin";
 
@@ -12,12 +12,15 @@ const Header = () => {
     const { user, logOut } = useContext(AuthContext);
 
     const [isAdmin] = useAdmin();
+    const navigate = useNavigate();
     //console.log(isAdmin);
 
 
     const handleLogOut = () => {
         logOut()
-            .then(() => { })
+            .then(() => { 
+                navigate("/");
+            })
             .catch(error => console.error(error))
     }
 
@@ -124,7 +127,7 @@ const Header = () => {
             {/* menu bar in large device */}
 
             <div className="items-center justify-center xl:pr-24 hidden w-full lg:flex flex-row lg:w-auto lg:order-1" id="navbar-cta">
-                <ul className="flex flex-row items-center xl:pl-40  font-medium p-4 space-x-3 xl:space-x-10">
+                <ul className="flex flex-row items-center xl:pl-40  font-medium p-4 space-x-3 xl:space-x-5">
                     <NavLink to='/' activeclassName="active">
                         <li className=" text-base xl:text-lg text-white text-opacity-50 hover:text-opacity-100 font-normal font-heading"><a>HOME</a></li>
                     </NavLink>

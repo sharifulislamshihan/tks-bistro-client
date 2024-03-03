@@ -31,7 +31,7 @@ const Footer = () => {
                             </div>
 
 
-                            <div className="grid grid-cols-1 my-32 mx-auto lg:mx-60 md:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-6">
+                            <div className="grid grid-cols-1 my-32 mx-auto lg:mx-12 md:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-6">
                                 <div>
                                     <h2 className="mb-10 text-lg font-semibold font-heading text-white uppercase dark:text-white">MENU</h2>
                                     <div className="text-slate-400 font-paragraph text-base text-center dark:text-white font-medium">
