@@ -1,5 +1,5 @@
 import { NavLink, Outlet } from "react-router-dom";
-import { FaBell, FaBook, FaCalendar, FaCalendarCheck, FaHome, FaList, FaMoneyBill, FaShoppingCart, FaStar, FaThList, FaUsers, FaUtensils } from "react-icons/fa";
+import { FaBell, FaBook, FaCalendar, FaCalendarCheck, FaEnvelope, FaHome, FaList, FaMoneyBill, FaShoppingCart, FaStar, FaThList, FaUsers, FaUtensils } from "react-icons/fa";
 import { FaMessage } from "react-icons/fa6";
 import useAdmin from "../Hooks/useAdmin";
 import { Sling as Hamburger } from 'hamburger-react'
@@ -208,8 +208,11 @@ const Dashboard = () => {
                     <div className="navbar-start">
                         <div className="dropdown">
                             <div tabIndex={0} role="button" className="mx-6">
+                                {/* hamburger menu */}
                                 <Hamburger color='#000000' size={18} md:size={20}></Hamburger>
                             </div>
+
+                            {/* react menu */}
                             <Menu styles={style}>
 
                                 {
@@ -222,25 +225,25 @@ const Dashboard = () => {
                                                 </li>
 
                                                 <li className=" text-lg xl:text-xl text-[#f2ece0]  font-normal font-heading py-2 px-3 md:p-0 ">
-                                                    <NavLink  className='flex gap-3' to='/dashboard/addItems'>
+                                                    <NavLink className='flex gap-3' to='/dashboard/addItems'>
                                                         <FaUtensils className="mt-1"></FaUtensils>
                                                         ADD ITEMS</NavLink>
                                                 </li>
 
                                                 <li className=" text-lg xl:text-xl text-[#f2ece0]  font-normal font-heading py-2 px-3 md:p-0 ">
-                                                    <NavLink  className='flex gap-3' to='/dashboard/manageItems'>
+                                                    <NavLink className='flex gap-3' to='/dashboard/manageItems'>
                                                         <FaThList className="mt-1"></FaThList>
                                                         MANAGE ITEMS</NavLink>
                                                 </li>
 
                                                 <li className=" text-lg xl:text-xl text-[#f2ece0]  font-normal font-heading py-2 px-3 md:p-0 ">
-                                                    <NavLink  className='flex gap-3' to='/dashboard/manageBookings'>
+                                                    <NavLink className='flex gap-3' to='/dashboard/manageBookings'>
                                                         <FaBook className="mt-1"></FaBook>
                                                         MANAGE BOOKINGS</NavLink>
                                                 </li>
 
                                                 <li className=" text-lg xl:text-xl text-[#f2ece0]  font-normal font-heading py-2 px-3 md:p-0 ">
-                                                    <NavLink  className='flex gap-3' to='/dashboard/allUsers'>
+                                                    <NavLink className='flex gap-3' to='/dashboard/allUsers'>
                                                         <FaUsers className="mt-1"></FaUsers>
                                                         ALL USERS</NavLink>
                                                 </li>
@@ -305,7 +308,7 @@ const Dashboard = () => {
                                 <div className="indicator">
                                     <span className="indicator-item badge badge-secondary">2</span>
                                 </div>
-                                <FaMessage className=" text-lg md:text-xl lg:text-2xl cursor-pointer"></FaMessage>
+                                <FaEnvelope className=" text-lg md:text-xl lg:text-2xl cursor-pointer"></FaEnvelope>
                             </div>
 
                             <div>
@@ -316,13 +319,23 @@ const Dashboard = () => {
                             </div>
 
                             <div className="mt-3">
-                                <div className="avatar">
-                                    <div className="indicator">
-                                        <span className="indicator-item badge badge-secondary">99+</span>
+                                <div className="dropdown dropdown-end">
+                                    <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                                        <div className="w-10 rounded-full">
+                                            <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                                        </div>
                                     </div>
-                                    <div className="w-6 md:w-10 lg:w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                                        <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                                    </div>
+                                    <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+
+                                        <li>
+                                            <a className="justify-between text-lg font-semibold font-paragraph">
+                                                Profile
+                                            </a>
+                                        </li>
+                                        <li><a className="text-lg font-semibold font-paragraph">Settings</a></li>
+                                        <li><a className="text-lg font-semibold font-paragraph">Logout</a></li>
+
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -333,7 +346,7 @@ const Dashboard = () => {
                     <Outlet></Outlet>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 
