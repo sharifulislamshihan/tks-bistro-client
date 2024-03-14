@@ -13,7 +13,7 @@ const Menu = () => {
     //console.log(selectedCategory);
     // fetching data from locally
     useEffect(() => {
-        fetch('http://localhost:5000/menu')
+        fetch('https://tks-bistro-boss.vercel.app/menu')
             .then(res => res.json())
             .then(data => {
                 setMenu(data)

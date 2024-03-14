@@ -11,7 +11,7 @@ const useAdmin = () => {
         enabled: !loading, // only run if user is authenticated
         queryFn: async() =>{
             const res = await axiosSecure.get(`/user/admin/${user?.email}`);
-            console.log(res.data);
+            //console.log(res.data);
             return res.data.admin;
         }
     })

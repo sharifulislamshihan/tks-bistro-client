@@ -19,7 +19,7 @@ const UpdateItem = () => {
     const axiosPublic = useAxiosPublic();
     const axiosSecure = useAxiosSecure();
     const onSubmit = async (data) => {
-        console.log(data);
+        //console.log(data);
         // image upload to imgbb and will get a url form there
         const imageFile = { image: data.image[0] }
         const res = await axiosPublic.post(image_hosting_api, imageFile, {
@@ -27,7 +27,7 @@ const UpdateItem = () => {
                 'Content-Type': 'multipart/form-data'
             }
         })
-        console.log(res.data);
+        //console.log(res.data);
         if (res.data.success) {
             // todo: model still not working
             // sending data to the server with hosted image link
@@ -40,7 +40,7 @@ const UpdateItem = () => {
             }
             // 
             const menuResponse = await axiosSecure.patch(`/menu/${_id}`, menuItem).then((resp) => resp.data)
-            console.log(menuResponse.data);
+            //console.log(menuResponse.data);
             if (menuResponse.data.modifiedCount > 0) {
                 // show successful toast
                 reset();
@@ -54,7 +54,7 @@ const UpdateItem = () => {
 
             }
         }
-        console.log('image url', res.data);
+        //console.log('image url', res.data);
     };
 
     return (

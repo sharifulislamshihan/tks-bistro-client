@@ -5,7 +5,7 @@ const MyOrder = () => {
 
     // TODO : my order page didnot fixed yet
     const [cart] = useCart();
-    console.log(cart);
+    //console.log(cart);
     return (
         <div className="bg-[#F2ECE0]">
 

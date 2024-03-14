@@ -20,7 +20,7 @@ const Login = () => {
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
+        //console.log(email, password);
         signIn(email, password)
             .then(res => {
                 res.user
@@ -103,7 +103,7 @@ const Login = () => {
                         title: "Invalid email or password."
                     });
                 }
-                console.log(error);
+                //console.log(error);
             })
     }
 

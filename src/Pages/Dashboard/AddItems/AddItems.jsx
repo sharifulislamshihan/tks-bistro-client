@@ -11,7 +11,7 @@ const AddItems = () => {
     const axiosPublic = useAxiosPublic();
     const axiosSecure = useAxiosSecure();
     const onSubmit = async (data) => {
-        console.log(data);
+        //console.log(data);
         // image upload to imgbb and will get a url form there
         const imageFile = { image: data.image[0] }
         const res = await axiosPublic.post(image_hosting_api, imageFile, {
@@ -19,7 +19,7 @@ const AddItems = () => {
                 'Content-Type': 'multipart/form-data'
             }
         })
-        console.log(res.data);
+        //console.log(res.data);
         if (res.data.success) {
             // sending data to the server with hosted image link
             const menuItem = {
@@ -31,7 +31,7 @@ const AddItems = () => {
             }
             // 
             const menuResponse = await axiosSecure.post('/menu', menuItem)
-            console.log(menuResponse.data);
+            //console.log(menuResponse.data);
             if (menuResponse.data.insertedId) {
                 // show successful toast
                 reset();
@@ -45,7 +45,7 @@ const AddItems = () => {
                 
             }
         }
-        console.log('image url', res.data);
+        //console.log('image url', res.data);
     };
     return (
         <div>

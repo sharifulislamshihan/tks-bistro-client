@@ -28,7 +28,7 @@ const Register = () => {
             password: password
         }
 
-        console.log(user);
+        //console.log(user);
 
         // password validation
         // if (password.length < 6) {
@@ -97,7 +97,7 @@ const Register = () => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
 
-                console.log(errorCode, errorMessage);
+                //console.log(errorCode, errorMessage);
 
                 if (errorCode === 'auth/email-already-in-use') {
                     Swal.fire('Error', 'Email is already in use.', 'error');
@@ -109,7 +109,7 @@ const Register = () => {
                     Swal.fire('Error', 'An error occurred during registration.', 'error');
                 }
             })
-        console.log(name, email, password);
+       // console.log(name, email, password);
         form.reset();
 
     }
@@ -127,7 +127,7 @@ const Register = () => {
                 }
                 axiosPublic.post('/users', userInfo)
                 .then(res =>{
-                    console.log(res.data);
+                    //console.log(res.data);
                     navigate('/');
                 })
                 const Toast = Swal.mixin({
