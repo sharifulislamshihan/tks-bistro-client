@@ -1,15 +1,28 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import { FaBell, FaBook, FaCalendar, FaCalendarCheck, FaEnvelope, FaHome, FaList, FaMoneyBill, FaShoppingCart, FaStar, FaThList, FaUsers, FaUtensils } from "react-icons/fa";
 import { FaMessage } from "react-icons/fa6";
 import useAdmin from "../Hooks/useAdmin";
 import { Sling as Hamburger } from 'hamburger-react'
 import { slide as Menu } from 'react-burger-menu'
+import { useContext } from "react";
+import { AuthContext } from "../Providers/AuthProvider";
 
 const Dashboard = () => {
     // todo: get is admin value from database
     const [isAdmin] = useAdmin();
     // const isAdmin = true;
     //console.log(isAdmin);
+
+    const { logOut } = useContext(AuthContext);
+    const navigate = useNavigate();
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => {
+                navigate("/");
+            })
+            .catch(error => console.error(error))
+    }
 
     // to set the menu bar in mobile device
     var style = {
@@ -200,7 +213,7 @@ const Dashboard = () => {
         //     </div>
         // </div>
 
-        <div>
+        <div className="min-h-screen">
 
             <div className=" bg-[#f2ece0]">
                 {/* Navbar */}
@@ -333,7 +346,7 @@ const Dashboard = () => {
                                             </a>
                                         </li>
                                         <li><a className="text-lg font-semibold font-paragraph">Settings</a></li>
-                                        <li><a className="text-lg font-semibold font-paragraph">Logout</a></li>
+                                        <li><a onClick={handleLogOut} className="text-lg font-semibold font-paragraph">Logout</a></li>
 
                                     </ul>
                                 </div>

@@ -4,6 +4,7 @@ import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import { BiCoinStack, BiMessageSquare, BiMessageSquareCheck, BiSolidCategory } from "react-icons/bi";
 import { FaUsers } from "react-icons/fa";
 import AdminRevenueChart from "./AdminRevenueChart";
+import AdminOrderSummery from "./AdminOrderSummery";
 
 
 
@@ -73,9 +74,13 @@ const AdminHome = () => {
                 </div>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mx-1 md:mx-5 xl:mx-40">
                 <div className="bg-white rounded-lg shadow-xl">
                     <AdminRevenueChart></AdminRevenueChart>
+                </div>
+
+                <div className="bg-white rounded-lg shadow-xl">
+                    <AdminOrderSummery></AdminOrderSummery>
                 </div>
             </div>
         </div>

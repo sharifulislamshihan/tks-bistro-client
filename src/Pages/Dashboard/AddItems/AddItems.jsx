@@ -75,7 +75,7 @@ const AddItems = () => {
 
                     </div>
 
-                    <div className="flex gap-8">
+                    <div className="flex gap-4 lg:gap-8">
                         {/* category */}
                         <div className="form-control w-full">
                             <label className="label">

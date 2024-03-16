@@ -1,53 +1,32 @@
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import Chart from "react-google-charts";
 
 const data = [
-    {
-        name: 'Page A',
-        Income: 4000,
-        Expense: 2400,
-        amt: 2400,
-    },
-    {
-        name: 'Page B',
-        Income: 3000,
-        Expense: 1398,
-        amt: 2210,
-    },
-    {
-        name: 'Page C',
-        Income: 2000,
-        Expense: 9800,
-        amt: 2290,
-    },
-    {
-        name: 'Page D',
-        Income: 2780,
-        Expense: 3908,
-        amt: 2000,
-    },
-    {
-        name: 'Page E',
-        Income: 1890,
-        Expense: 4800,
-        amt: 2181,
-    },
-    {
-        name: 'Page F',
-        Income: 2390,
-        Expense: 3800,
-        amt: 2500,
-    },
-    {
-        name: 'Page G',
-        Income: 3490,
-        Expense: 4300,
-        amt: 2100,
-    },
+    ["Year", "Sales", "Expenses"],
+    ["Jan", 1000, 400],
+    ["Feb", 1170, 460],
+    ["Mar", 660, 1120],
+    ["Apr", 1030, 540],
+    ["May", 1000, 640],
+    ["Jun", 1230, 560],
+    ["Jul", 1830, 380],
+    ["Aug", 630, 100],
+    ["Sept", 1030, 430],
+    ["Oct", 1430, 240],
+    ["Nov", 1730, 500],
+    ["Dec", 1500, 200],
 ];
+
+const options = {
+    title: "Resturant Revenue",
+    hAxis: { title: "Year", titleTextStyle: { color: "#333" } },
+    vAxis: { minValue: 0 },
+    chartArea: { width: "80%", height: "70%" },
+};
+
 
 const AdminRevenueChart = () => {
     return (
-        <div className='flex flex-col justify-center mb-10'>
+        <div className='flex flex-col justify-center mb-10 '>
             <h3 className='text-2xl font-semibold text-center font-heading mt-10 mb-10'>Revenue</h3>
             <div className='flex justify-center gap-20 mx-20 mb-4'>
                 <div className='flex gap-3'>
@@ -74,10 +53,10 @@ const AdminRevenueChart = () => {
                     </div>
                 </div>
             </div>
-            <div className='mx-auto'>
+            {/* <div className='mx-auto'>
                 <LineChart
-                    width={500}
-                    height={300}
+                    width = {'50%'}
+                    height={'30%'}
                     data={data}
                     margin={{
                         top: 5,
@@ -94,7 +73,18 @@ const AdminRevenueChart = () => {
                     <Line type="monotone" dataKey="Income" stroke="#8884d8" activeDot={{ r: 8 }} />
                     <Line type="monotone" dataKey="Expense" stroke="#82ca9d" />
                 </LineChart>
+            </div> */}
+
+            <div>
+                <Chart
+                    chartType="AreaChart"
+                    width="100%"
+                    height="400px"
+                    data={data}
+                    options={options}
+                />
             </div>
+
 
         </div>
     );
